@@ -1,8 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 class App extends Component {
+  componentWillMount() {
+    fetch(
+      "https://raw.githubusercontent.com/radik909/cart/master/src/MOCK_DATA.csv"
+    )
+      .then(res => res.text())
+      .then(csv => {
+        console.log(csv);
+      });
+  }
   render() {
     return (
       <div className="App">
